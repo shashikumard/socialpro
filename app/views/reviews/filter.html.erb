@@ -1,0 +1,19 @@
+<h1>Filters</h1>
+
+<%= form_tag filter_submit_path, :method=> :post do %>
+	<%= label_tag "Make" %>  
+	<%= select_tag "make", options_for_select([['BMW' ,'BMW'], ['Audi', 'Audi'],['Honda','Honda'],['Hyundai','Hyundai'],['ICML','ICML'],['Ferrari','Ferrari']]) %>
+	<%= label_tag "Model" %>  
+	<%= select_tag "model", options_for_select([['1 series' ,'1 series'], ['3 Series', '3 Series']]) %>
+	<%= label_tag "Version" %>  
+	<%= select_tag "version", options_for_select([['116i Hatchback' ,'116i Hatchback'], ['320d', '320d']]) %><br/>
+	<%= select_date(date_since = Date.current, options = {}, html_options = {}) %><br>
+	<%= submit_tag("Submit") %>
+<% end %>
+
+<style>
+select#date_day,select#date_month,select#date_year
+{
+	width:70px;
+}
+</style>
